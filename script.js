@@ -7,9 +7,14 @@ function generateHuman(name, surname, age, phoneNumber, country, id) {
     (this.country = country),
     (this.id = id);
 }
+const dataHistory = [];
+const addNumberToHistory = (newPhoneNumber) => {
+  dataHistory.push({ old_phone_number: newPhoneNumber });
+};
 generateHuman.prototype.changePhoneNumber = function (newPhoneNumber) {
-  this.oldPhoneNumber = Number(this.phoneNumber);
+  const oldNumber = this.phoneNumber;
   this.phoneNumber = newPhoneNumber;
+  return addNumberToHistory(oldNumber);
 };
 
 const peter = new generateHuman(
@@ -23,8 +28,12 @@ const peter = new generateHuman(
 console.log(peter);
 
 peter.changePhoneNumber(500400300);
+peter.changePhoneNumber(100200300);
+peter.changePhoneNumber(999999999);
 console.log(peter);
+console.log(dataHistory);
 
+// Class
 class GenerateHuman {
   constructor(name, surname, age, phoneNumber, country, id) {
     (this.name = name),
