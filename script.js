@@ -1,4 +1,4 @@
-function GenerateHuman (name, surname, age, phoneNumber, country, id) { 
+function generateHuman (name, surname, age, phoneNumber, country, id) { 
     this.name = name,
     this.surname = surname,
     this.email = `${name}${surname}@test.pl`
@@ -7,7 +7,13 @@ function GenerateHuman (name, surname, age, phoneNumber, country, id) {
     this.country = country,
     this.id = id
 }
+generateHuman.prototype.changePhoneNumber = function (newPhoneNumber) {
+    this.oldPhoneNumber = Number(this.phoneNumber)
+    this.phoneNumber = newPhoneNumber
+}
 
-const peter = new GenerateHuman('Piotr', 'Ochodek', 35, '500532607', 'Poland', '#1')
+const peter = new generateHuman('Piotr', 'Ochodek', 35, '500532607', 'Poland', '#1')
+console.log(peter)
 
+peter.changePhoneNumber(500400300)
 console.log(peter)
