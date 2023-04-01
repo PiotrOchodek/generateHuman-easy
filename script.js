@@ -9,10 +9,7 @@ class GenerateHuman {
       (this.id = id);
   }
   addNumberToHistory = (newPhoneNumber) => {
-    const dataHistory = [];
-    dataHistory.push({ old_phone_number: newPhoneNumber });
-    console.log(dataHistory)
-    return dataHistory
+    this.history =  newPhoneNumber
   };
   changePhoneNumber = (newPhoneNumber) => {
     const oldNumber = this.phoneNumber;
@@ -20,7 +17,6 @@ class GenerateHuman {
     return this.addNumberToHistory(oldNumber);
   };
 }
-
 
 const peter = new GenerateHuman(
   'Piotr',
@@ -31,6 +27,4 @@ const peter = new GenerateHuman(
   '#1'
 );
 console.log(peter);
-peter.changePhoneNumber('111222333')
-peter.changePhoneNumber('555666777')
-console.log(peter)
+peter.changePhoneNumber('111222333');
