@@ -8,8 +8,8 @@ class GenerateHuman {
       (this.country = country),
       (this.id = id);
   }
-  addNumberToHistory = (newPhoneNumber) => {
-    this.history =  newPhoneNumber
+  addNumberToHistory = (oldNumber) => {
+    this.history = [`old phone number: ${oldNumber}`];
   };
   changePhoneNumber = (newPhoneNumber) => {
     const oldNumber = this.phoneNumber;
